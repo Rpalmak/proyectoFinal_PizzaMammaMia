@@ -4,11 +4,11 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PizzaContext from '../my_context';
-import { useNavigate } from 'react-router-dom';  // Agrega esta línea
+import { useNavigate } from 'react-router-dom';  
 
 const CardPizza = () => {
   const { pizzas, addPizza } = useContext(PizzaContext);
-  const navigate = useNavigate();  // Agrega esta línea
+  const navigate = useNavigate(); 
 
   return (
     <div className='row'>

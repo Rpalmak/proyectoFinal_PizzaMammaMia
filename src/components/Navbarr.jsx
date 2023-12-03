@@ -10,12 +10,13 @@ import { Link } from 'react-router-dom';
 import TopContainer from './TopContainer'
 
 function CustomNavbar() {
-  const { detailsCart, total } = useContext(PizzaContext);
+  const { totalQuantity, detailsCart, total } = useContext(PizzaContext);
 
   return (
     <>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
+        <Link to="/" className='d-flex flex-row align-items-center' style={{ cursor: 'pointer' }}>
           <Navbar.Brand>
             <img
               src={PizzaIcon}
@@ -26,6 +27,7 @@ function CustomNavbar() {
             />
             Pizzería Mamma Mia!
           </Navbar.Brand>
+          </Link>
 
           <Nav className="ml-auto">
           <Link to="/carrito" className='d-flex flex-row align-items-center' style={{ cursor: 'pointer' }}>
@@ -36,7 +38,7 @@ function CustomNavbar() {
                 className="d-inline-block align-top"
                 alt="Cart Icon"
               />
-              <p className="mb-0 ml-2">Carrito: {detailsCart.length}</p>
+              <p className="mb-0 ml-2">Carrito: {totalQuantity}</p>
             </Link>
           </Nav>
         </Container>

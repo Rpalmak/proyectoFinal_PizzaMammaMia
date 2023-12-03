@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Button, Figure, ListGroup, Modal } from 'react-bootstrap';
 import { useParams, useNavigate } from 'react-router-dom';
 import PizzaContext from '../my_context';
+import MainComponent from '../components/MainComponent';
 
 const Pizza = () => {
   const { addPizza } = useContext(PizzaContext);
@@ -42,6 +43,7 @@ const Pizza = () => {
   }
 
   return (
+    <>
     <Modal show={showModal} onHide={handleClose} centered dialogClassName="pizza-modal">
       <Modal.Header closeButton>
         <Modal.Title>{pizza.name}</Modal.Title>
@@ -94,6 +96,8 @@ const Pizza = () => {
         </div>
       </Modal.Body>
     </Modal>
+    <MainComponent/>
+    </>
   );
 };
 

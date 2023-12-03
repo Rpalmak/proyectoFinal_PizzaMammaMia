@@ -13,16 +13,16 @@ function App() {
   return (
     <>
       <PizzaProvider>
-      <Navbarr />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/pizza/:id' element={<Pizza />} />
-        <Route path='/carrito' element={<Carrito />} />
-      </Routes>
-      <MainComponent />
-    </PizzaProvider>
+        <Navbarr />
+        <Routes>
+          <Route path='/' element={<Home />} exact />
+          <Route path='/pizza/:id' element={<Pizza />} />
+          <Route path='/carrito' element={<Carrito />} />
+        </Routes>
+      </PizzaProvider>
     </>
   );
 }
+
 
 export default App;

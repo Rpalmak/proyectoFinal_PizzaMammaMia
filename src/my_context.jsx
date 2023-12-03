@@ -46,6 +46,8 @@ const PizzaProvider = ({ children }) => {
     0
   )
 
+  const totalQuantity = detailsCart.reduce((acc, { count }) => acc + count, 0);
+
   return (
     <PizzaContext.Provider
       value={{
@@ -55,7 +57,8 @@ const PizzaProvider = ({ children }) => {
         addPizza,
         addition,
         reduction,
-        total
+        total,
+        totalQuantity
       }}
     >
       {children}
